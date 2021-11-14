@@ -17,6 +17,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->post('/api/v1/auth/register', 'AuthController@register');
+$router->post('/api/v1/auth/login', 'AuthController@login');
+$router->get('/api/v1/auth/me', 'AuthController@me');
+
 $router->get('/api/v1/users', 'UserController@FindAll');
 $router->get('/api/v1/users/{userId}', 'UserController@FindById');
 $router->post('/api/v1/users', 'UserController@Create');
